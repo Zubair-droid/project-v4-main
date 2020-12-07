@@ -1,0 +1,135 @@
+<%- include('partials/header') %>
+
+
+<div class="jumbotron" style="background-color: burlywood; color:white;">
+    <div style="align-content: center;" class="container" >
+      <h1 style="font-family: 'Montserrat',sans-serif";>See who needs help</h1>
+      <h1 style="font-family: 'Montserrat',sans-serif">Start spreading happiness</h1>
+      
+      
+      <hr>
+<!--     
+      <div class="container-fluid">
+          <div class="row">
+            <div style="margin: 10px;padding: 10px;" class="card col-lg-4 col-md-6 col-sm-12">
+                
+                <div style="color:black; font-family:'Poppins',sans-serif"; class="container">
+                  <h4><b>Shiri Saradha Sakthi Peetam</b></h4>
+                  <p>No 72, Kamarajar Highway, Old Perungalathur, Chennai - 600063, Near Padmavathi Kalyanamandapam</p>
+                  <p>9152192918</p>
+                </div>
+              </div>
+
+              <div style="margin: 10px;padding: 10px;"  class="card col-lg-4 col-md-6 col-sm-12">
+               
+                <div style="color:black;font-family:'Poppins',sans-serif"class="container">
+                  <h4><b>Christ Faith Home For Children</b></h4>
+                  <p>No 3/91, Mettu Colony, Manapakkam, Chennai - 600125, Opposite Manapakkam Eb Office</p>
+                  <p>9152122713</p>
+                </div>
+              </div>
+
+              <div style="margin:10px; padding: 10px;" class="card col-lg-4 col-md-6 col-sm-12">
+                
+                <div style="color:black; font-family:'Poppins',sans-serif" class="container">
+                  <h4><b>Child Care Foundation</b></h4>
+                  <p>No 3, 4th Cross Street Krishna Nagar, Pammal, Chennai - 600075, Opposite Adyar Bakery</p>
+                  <p>9152331178</p>
+                </div>
+              </div>
+
+              <div style="margin: 10px;padding: 10px;" class="card col-lg-4 col-md-6 col-sm-12">
+                
+                <div style="color:black; font-family:'Poppins',sans-serif" class="container">
+                  <h4><b>I G M Children Home</b></h4>
+                  <p>No 3, Veera Babu Nager, Perungalathur, Chennai - 600048, Near St. John School GUDUVANCHERY</p>
+                  <p>9152317361</p>
+                </div>
+              </div>
+
+              <div style="margin: 10px;padding: 10px;"  class="card col-lg-4 col-md-6 col-sm-12">
+                
+                <div style="color:black; font-family:'Poppins',sans-serif"class="container">
+                  <h4><b>Hope Foundation</b></h4>
+                  <p>New No. 13 Old No. 7 Sharaths Apartment Flat D First floor, Near Marry Brown Nehru nagar first Street, Adyar, Chennai 600020 </p>
+                  <p>(044) 66245070</p>
+                </div>
+              </div>
+
+              <div style="margin: 10px; padding: 10px;" class="card col-lg-4 col-md-6 col-sm-12">
+               
+                <div style="color:black; font-family:'Poppins',sans-serif" class="container">
+                  <h4><b>Hope for the Hopeless International</b></h4>
+                  <p>No. 1/39, Near Mmm Hospital, J J Nagar, Mogappair East, Chennai – 600037 </p>
+                  <p>(044) 66324643</p>
+                </div>
+              </div>
+          </div>
+      </div> -->
+
+      
+      
+          <h2>Open for donation</h2>
+          <hr>
+            <% results.forEach(function(result,i){ %>
+  
+         <% if(result.role==="Donor"){%>
+        <div style="margin: 10px;padding: 10px;" class="card col-lg-4 col-md-6 col-sm-12">
+          <div style="color:black; font-family:'Poppins',sans-serif;" class="container">     
+          
+            <h4 class="secret-text"><%=result.username%></h4>
+            <h4 class="secret-text"><%=result.secret%></h4>
+             <p class="secret-text"><%=result.contact%></p>
+          </div>
+        </div> 
+      <%}%>
+      <% }) %>   
+      <h2>Open to receive</h2>
+      <hr>
+      <% results.forEach(function(result,i){ %>
+        <% if(result.role==="Receiver"){%>
+  
+  <div style="margin: 10px;padding: 10px;" class="card col-lg-4 col-md-6 col-sm-12">
+    <div style="color:black; font-family:'Poppins',sans-serif;" class="container">     
+    <h4 class="secret-text"><%=result.username%></h4>
+      <h4 class="secret-text"><%=result.secret%></h4>
+       <p class="secret-text"><%=result.contact%></p>
+    </div>
+  </div>   
+  <%}%>
+
+          <% }) %>   
+      
+      <a style="align-content: center; font-family: 'Montserrat',sans-serif" class="btn btn-light btn-lg" href="/submit" role="button">Donate</a>
+      <a style="align-content: center; font-family: 'Montserrat',sans-serif" class="btn btn-dark btn-lg" href="/submit" role="button">Ask</a>
+  
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%- include('partials/footer') %>
